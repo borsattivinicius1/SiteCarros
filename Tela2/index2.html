@@ -5,41 +5,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VW Jetta GLI – Detalhes</title>
     <link rel="stylesheet" href="style2.css">
-     <script src="../../js/globais.js"></script>
 
-  <script>
+    <script>
         const carroAtual = "Jetta";
     </script>
 </head>
+
 <body>
     <div class="detalhes-container">
 
         <h1>Volkswagen Jetta GLI</h1>
 
-          <div class="imagem-slider">
-        <img id="fotoCarro" alt="Jetta GLI">
+        <!-- SLIDER -->
+        <div class="imagem-slider">
+            <img id="fotoCarro" alt="Jetta GLI">
         </div>
 
-        <div>
+        <div class="controle-slider">
             <button onclick="voltarFoto()">⬅</button>
             <button onclick="avancarFoto()">➡</button>
         </div>
 
-        <h2>Ficha Técnica</h2>
-        <ul>
-            <li><strong>Motor:</strong> 2.0 TSI Turbo</li>
-            <li><strong>Potência:</strong> 230 cv</li>
-            <li><strong>Torque:</strong> 35,7 kgfm</li>
-            <li><strong>Velocidade máxima:</strong> ~250 km/h</li>
-            <li><strong>0-100 km/h:</strong> ~6,7 s</li>
-            <li><strong>Combustível:</strong> Gasolina</li>
-            <li><strong>Transmissão:</strong> Automática DSG 7 velocidades</li>
-            <li><strong>Tração:</strong> Dianteira</li>
-        </ul>
+        <!-- DESTAQUES -->
+        <section class="destaques">
+            <div class="card">
+                <span>230 cv</span>
+                <p>Potência</p>
+            </div>
+            <div class="card">
+                <span>6,7 s</span>
+                <p>0–100 km/h</p>
+            </div>
+            <div class="card">
+                <span>DSG 7</span>
+                <p>Câmbio</p>
+            </div>
+            <div class="card">
+                <span>Dianteira</span>
+                <p>Tração</p>
+            </div>
+        </section>
+
+        <!-- DESCRIÇÃO -->
+        <section class="descricao">
+            <h2>Sobre o Jetta GLI</h2>
+            <p>
+                O Volkswagen Jetta GLI é um sedã esportivo que entrega alto
+                desempenho com conforto e tecnologia. Seu motor 2.0 TSI
+                proporciona respostas rápidas e excelente dirigibilidade.
+            </p>
+        </section>
+
+        <!-- FICHA TÉCNICA -->
+        <section>
+            <h2>Ficha Técnica</h2>
+
+            <table class="ficha-tecnica">
+                <tr><td>Motor</td><td>2.0 TSI Turbo</td></tr>
+                <tr><td>Potência</td><td>230 cv</td></tr>
+                <tr><td>Torque</td><td>35,7 kgfm</td></tr>
+                <tr><td>0–100 km/h</td><td>6,7 s</td></tr>
+                <tr><td>Velocidade Máx.</td><td>~250 km/h</td></tr>
+                <tr><td>Combustível</td><td>Gasolina</td></tr>
+                <tr><td>Transmissão</td><td>Automática DSG 7</td></tr>
+                <tr><td>Tração</td><td>Dianteira</td></tr>
+            </table>
+        </section>
 
         <button onclick="window.close()">⬅ Voltar</button>
 
     </div>
-    
+
+    <!-- JS GLOBAL NO FINAL -->
+    <script src="../../js/globais.js"></script>
 </body>
 </html>

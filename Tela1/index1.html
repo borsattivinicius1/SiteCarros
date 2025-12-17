@@ -16,32 +16,66 @@
 
         <h1>BMW M3</h1>
 
+        <!-- SLIDER -->
         <div class="imagem-slider">
-        <img id="fotoCarro" alt="BMW M3">
+            <img id="fotoCarro" alt="BMW M3">
         </div>
 
-        <div>
+        <div class="controle-slider">
             <button onclick="voltarFoto()">⬅</button>
             <button onclick="avancarFoto()">➡</button>
         </div>
 
-        <h2>Ficha Técnica</h2>
-        <ul>
-            <li><strong>Motor:</strong> 3.0 Bi-Turbo 24V</li>
-            <li><strong>Potência:</strong> 431 cv</li>
-            <li><strong>Torque:</strong> 56 kgfm</li>
-            <li><strong>0-100 km/h:</strong> 4,1 s</li>
-            <li><strong>Velocidade máxima:</strong> 250 km/h</li>
-            <li><strong>Combustível:</strong> Gasolina</li>
-            <li><strong>Transmissão:</strong> Automática 7 velocidades</li>
-            <li><strong>Tração:</strong> Traseira</li>
-        </ul>
+        <!-- DESTAQUES -->
+        <section class="destaques">
+            <div class="card">
+                <span>431 cv</span>
+                <p>Potência</p>
+            </div>
+            <div class="card">
+                <span>4,1 s</span>
+                <p>0–100 km/h</p>
+            </div>
+            <div class="card">
+                <span>Automático</span>
+                <p>Câmbio</p>
+            </div>
+            <div class="card">
+                <span>Traseira</span>
+                <p>Tração</p>
+            </div>
+        </section>
+
+        <!-- DESCRIÇÃO -->
+        <section class="descricao">
+            <h2>Sobre o BMW M3</h2>
+            <p>
+                O BMW M3 é um sedã esportivo de alto desempenho que combina luxo,
+                tecnologia e potência extrema. Seu motor 3.0 bi-turbo entrega
+                aceleração impressionante e dirigibilidade refinada.
+            </p>
+        </section>
+
+        <!-- FICHA TÉCNICA -->
+        <section>
+            <h2>Ficha Técnica</h2>
+
+            <table class="ficha-tecnica">
+                <tr><td>Motor</td><td>3.0 Bi-Turbo 24V</td></tr>
+                <tr><td>Potência</td><td>431 cv</td></tr>
+                <tr><td>Torque</td><td>56 kgfm</td></tr>
+                <tr><td>0–100 km/h</td><td>4,1 s</td></tr>
+                <tr><td>Velocidade Máx.</td><td>250 km/h</td></tr>
+                <tr><td>Combustível</td><td>Gasolina</td></tr>
+                <tr><td>Transmissão</td><td>Automática 7 marchas</td></tr>
+                <tr><td>Tração</td><td>Traseira</td></tr>
+            </table>
+        </section>
 
         <button onclick="window.close()">⬅ Voltar</button>
 
     </div>
 
-    <!-- 3️⃣ JS GLOBAL NO FINAL E COM CAMINHO CERTO -->
     <script src="../../js/globais.js"></script>
 </body>
 </html>

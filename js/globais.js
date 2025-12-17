@@ -33,10 +33,8 @@ function carregarImagens() {
     } else if (carroAtual === "M3") {
         imagens = [
             "../../img/M3/M3.jpg",
-            "../../img/M3/M3_2.jpg",
             "../../img/M3/M3_3.webp",
-            "../../img/M3/M3_4.png",
-            "../../img/M3/M3_5.jpeg"
+            "../../img/M3/M3_4.png"
         ];
     } else if (carroAtual === "X5") {
         imagens = [

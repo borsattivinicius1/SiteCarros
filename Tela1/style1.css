@@ -12,56 +12,12 @@ body {
     margin: 0 auto;
 }
 
-.detalhes-container img {
-    width: 80%;
-    border-radius: 12px;
-    margin: 25px 0;
-
-    border: 3px solid rgb(5, 47, 216);
-
-    box-shadow:
-        0 0 15px rgba(5, 47, 216, 0.6),
-        0 0 30px rgba(5, 47, 216, 0.4);
-}
-
-h1, h2 {
-    color: rgb(5, 47, 216);
-}
-
-ul {
-    list-style: none;
-    padding: 0;
-    margin: 0 auto;
-    width: 60%;
-    text-align: left;
-}
-
-ul li {
-    margin: 8px 0;
-    font-size: 18px;
-}
-
-button {
-    margin-top: 30px;
-    padding: 12px 28px;
-    background-color: transparent;
-    color: rgb(5, 47, 216);
-    border: 2px solid rgb(5, 47, 216);
-    border-radius: 30px;
-    font-size: 18px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: rgb(5, 47, 216);
-    color: white;
-}
-
+/* SLIDER */
 .imagem-slider {
     width: 100%;
-    max-width: 750px;      /* largura máxima */
-    height: 450px;         /* ALTURA FIXA */
-    margin: 0 auto;        /* centraliza */
+    max-width: 750px;
+    height: 450px;
+    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -70,7 +26,74 @@ button:hover {
 .imagem-slider img {
     width: 100%;
     height: 100%;
-    object-fit: contain;   /* NÃO corta a imagem */
+    object-fit: contain;
     border-radius: 12px;
+    border: 3px solid rgb(5, 47, 216);
+    box-shadow: 0 0 20px rgba(5, 47, 216, 0.6);
 }
 
+.controle-slider button {
+    margin: 15px 10px;
+}
+
+/* DESTAQUES */
+.destaques {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin: 40px 0;
+}
+
+.card {
+    border: 2px solid rgb(5, 47, 216);
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.card span {
+    font-size: 22px;
+    font-weight: bold;
+    color: rgb(5, 47, 216);
+}
+
+.card p {
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+/* DESCRIÇÃO */
+.descricao {
+    margin: 40px auto;
+    max-width: 800px;
+}
+
+/* FICHA TÉCNICA */
+.ficha-tecnica {
+    width: 60%;
+    margin: 0 auto 40px;
+    border-collapse: collapse;
+}
+
+.ficha-tecnica td {
+    border: 1px solid rgb(5, 47, 216);
+    padding: 10px;
+}
+
+/* GERAL */
+h1, h2 {
+    color: rgb(5, 47, 216);
+}
+
+button {
+    padding: 12px 28px;
+    background: transparent;
+    color: rgb(5, 47, 216);
+    border: 2px solid rgb(5, 47, 216);
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: rgb(5, 47, 216);
+    color: white;
+}
