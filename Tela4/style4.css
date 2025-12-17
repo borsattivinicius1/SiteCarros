@@ -58,7 +58,7 @@ button:hover {
 }
 .imagem-slider {
     width: 100%;
-    max-width: 900px;      /* largura máxima */
+    max-width: 600px;      /* largura máxima */
     height: 450px;         /* ALTURA FIXA */
     margin: 0 auto;        /* centraliza */
     display: flex;
