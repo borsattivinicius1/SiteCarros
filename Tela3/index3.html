@@ -5,12 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BMW X5 M50i – Detalhes</title>
     <link rel="stylesheet" href="style3.css">
+    <script src="../../js/globais.js"></script>
+
+    <script> 
+    const carroAtual="X5"; 
+    </script>
+
 </head>
 <body>
     <div class="detalhes-container">
 
         <h1>BMW X5 M50i</h1>
-        <img src="../../img/X5/x5_m.avif" alt="BMW X5">
+
+
+        <div class="imagem-slider">
+        <img id="fotoCarro" alt="BMW X5">
+        </div>
+
+        <div>
+            <button onclick="voltarFoto()">⬅</button>
+            <button onclick="avancarFoto()">➡</button>
+        </div>
 
         <h2>Ficha Técnica</h2>
         <ul>

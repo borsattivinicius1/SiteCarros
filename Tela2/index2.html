@@ -5,12 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VW Jetta GLI – Detalhes</title>
     <link rel="stylesheet" href="style2.css">
+     <script src="../../js/globais.js"></script>
+
+  <script>
+        const carroAtual = "Jetta";
+    </script>
 </head>
 <body>
     <div class="detalhes-container">
 
         <h1>Volkswagen Jetta GLI</h1>
-        <img src="../../img/Jetta/Jetta_GLI.jpg" alt="Jetta GLI">
+
+          <div class="imagem-slider">
+        <img id="fotoCarro" alt="Jetta GLI">
+        </div>
+
+        <div>
+            <button onclick="voltarFoto()">⬅</button>
+            <button onclick="avancarFoto()">➡</button>
+        </div>
 
         <h2>Ficha Técnica</h2>
         <ul>
@@ -27,5 +40,6 @@
         <button onclick="window.close()">⬅ Voltar</button>
 
     </div>
+    
 </body>
 </html>

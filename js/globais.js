@@ -89,3 +89,7 @@ function voltarFoto() {
    ====================================================== */
 
 window.onload = carregarImagens;
+
+
+
+console.log('Deu certo')
