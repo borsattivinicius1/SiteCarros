@@ -5,42 +5,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HB20 – Detalhes</title>
     <link rel="stylesheet" href="style4.css">
-    <script src="../../js/globais.js"></script>
 
-<script> 
-    const carroAtual="HB20"; 
+    <script>
+        const carroAtual = "HB20";
     </script>
-
 </head>
+
 <body>
     <div class="detalhes-container">
 
-        <h1>HB20</h1>
+        <h1>Hyundai HB20</h1>
 
-
-         <div class="imagem-slider">
-        <img id="fotoCarro" alt="HB20">
+        <!-- SLIDER -->
+        <div class="imagem-slider">
+            <img id="fotoCarro" alt="HB20">
         </div>
 
-        <div>
+        <div class="controle-slider">
             <button onclick="voltarFoto()">⬅</button>
             <button onclick="avancarFoto()">➡</button>
         </div>
 
-        <h2>Ficha Técnica</h2>
-        <ul>
-          <li><strong>Motor:</strong> 1.0 Turbo Flex / 120 cv</li>
-            <li><strong>Torque:</strong> 17,5 kgfm</li>
-            <li><strong>0-100 km/h:</strong> ~10,7 s</li>
-            <li><strong>Velocidade máxima:</strong> ~190 km/h</li>
-            <li><strong>Tração:</strong> Dianteira</li>
-            <li><strong>Transmissão:</strong> Automática 6 marchas</li>
-            <li><strong>Capacidade do tanque:</strong> 50 L</li>
-            <li><strong>Porta-malas:</strong> 300 L</li>
-        </ul>
+        <!-- DESTAQUES -->
+        <section class="destaques">
+            <div class="card">
+                <span>120 cv</span>
+                <p>Potência</p>
+            </div>
+            <div class="card">
+                <span>10,7 s</span>
+                <p>0–100 km/h</p>
+            </div>
+            <div class="card">
+                <span>Automático</span>
+                <p>Câmbio</p>
+            </div>
+            <div class="card">
+                <span>Flex</span>
+                <p>Combustível</p>
+            </div>
+        </section>
+
+        <!-- DESCRIÇÃO -->
+        <section class="descricao">
+            <h2>Sobre o HB20</h2>
+            <p>
+                O Hyundai HB20 é um hatch compacto moderno, econômico e confiável.
+                Com motor 1.0 turbo, entrega bom desempenho para o dia a dia,
+                aliado a conforto, tecnologia e baixo consumo.
+            </p>
+        </section>
+
+        <!-- FICHA TÉCNICA -->
+        <section>
+            <h2>Ficha Técnica</h2>
+
+            <table class="ficha-tecnica">
+                <tr><td>Motor</td><td>1.0 Turbo Flex</td></tr>
+                <tr><td>Potência</td><td>120 cv</td></tr>
+                <tr><td>Torque</td><td>17,5 kgfm</td></tr>
+                <tr><td>0–100 km/h</td><td>~10,7 s</td></tr>
+                <tr><td>Velocidade Máx.</td><td>~190 km/h</td></tr>
+                <tr><td>Tração</td><td>Dianteira</td></tr>
+                <tr><td>Transmissão</td><td>Automática 6 marchas</td></tr>
+                <tr><td>Porta-malas</td><td>300 L</td></tr>
+            </table>
+        </section>
 
         <button onclick="window.close()">⬅ Voltar</button>
 
     </div>
+
+    <!-- JS GLOBAL -->
+    <script src="../../js/globais.js"></script>
 </body>
 </html>
