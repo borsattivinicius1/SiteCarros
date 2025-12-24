@@ -44,7 +44,19 @@ function carregarImagens() {
             "../../img/X5/x5_4.jpg",
             "../../img/X5/x5_5.jpg"
         ];
+
+        } else if (carroAtual === "Tracker") {
+        imagens = [
+            "../../img/Tracker/Tracker_.webp",
+            "../../img/Tracker/Tracker_1.jpg",
+            "../../img/Tracker/Tracker_2.jpg",
+            "../../img/Tracker/Tracker_4.jpg",
+            "../../img/Tracker/Tracker_5.webp"
+
+        ];
     }
+
+    
 
     document.getElementById("fotoCarro").src = imagens[indiceAtual];
 }
