@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Painel Admin</title>
+    <link rel="stylesheet" href="adicionar.css">
+    <script>
+        if (localStorage.getItem("tipoUsuario") !== "admin") {
+            window.location.href = "../TelaLogin/login.html";
+        }
+    </script>
+</head>
+<body>
+
+<button class="btn-sair" onclick="sair()">Sair</button>
+
+<div class="admin-wrapper">
+    <div class="admin-card">
+        <h1>Painel do Administrador</h1>
+        <p class="sub">Cadastrar novo veículo</p>
+
+        <input id="nome" placeholder="Nome do veículo">
+        <input id="cor" placeholder="Cor">
+        <input id="preco" placeholder="Preço">
+        <input id="imagem" placeholder="URL da imagem">
+        <textarea id="descricao" placeholder="Descrição"></textarea>
+
+        <button onclick="salvar()">Salvar Veículo</button>
+    </div>
+</div>
+
+<script>
+function sair() {
+    localStorage.removeItem("tipoUsuario");
+    window.location.href = "../TelaLogin/login.html";
+}
+</script>
+
+
+<script src="adicionar.js"></script>
+</body>
+</html>

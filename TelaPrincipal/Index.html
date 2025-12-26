@@ -1,103 +1,44 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site Carros</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="../js/globais.js"></script>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <header>
-        <h1>Carros Esportivos Premium</h1>
-    </header>
+<button class="btn-sair" onclick="sair()">Sair</button>
 
-    <main class="container">
+<h1>Carros</h1>
+<main class="container" id="lista"></main>
 
-        <div class="card">
-            <img src="../../img/M3/M3.jpg" alt="BMW M3">
-            <h2>BMW M3</h2>
+<script>
+const lista=JSON.parse(localStorage.getItem("veiculos"))||[];
+const div=document.getElementById("lista");
 
-            <ul>
-                <li><span>Cor:</span> Preto</li>
-                <li><span>Preço:</span> R$ 800.000</li>
-            </ul>
+lista.forEach((c,i)=>{
+ div.innerHTML+=`
+ <div class="card">
+  <img src="${c.imagem}">
+  <h2>${c.nome}</h2>
+  <p>Cor: ${c.cor}</p>
+  <p>Preço: ${c.preco}</p>
+  <button onclick="abrir(${i})">Detalhes</button>
+ </div>`;
+});
 
-            <a href="http://127.0.0.1:5500/Tela1/index1.html" target="_blank">
-                <button>Ver detalhes</button>
-            </a>
+function abrir(i){
+ localStorage.setItem("carroSelecionado",i);
+ window.open("../TelaDetalhes/index.html");
 
-        </div>
+}
+</script>
 
-        <div class="card">
-            <img src="../../img/Jetta/Jetta_GLI.jpg" alt="Jetta GLI">
-            <h2>Jetta GLI</h2>
-
-            <ul>
-                <li><span>Cor:</span> Cinza</li>
-                <li><span>Preço:</span> R$ 250.000</li>
-            </ul>
-
-            <a href="http://127.0.0.1:5500/Tela2/index2.html" target="_blank">
-                <button>Ver detalhes</button>
-            </a>
-
-        </div>
-
-        <div class="card">
-            <img src="../../img/X5/x5_m.avif" alt="BMW X5">
-            <h2>BMW X5</h2>
-
-            <ul>
-                <li><span>Cor:</span> Verde</li>
-                <li><span>Preço:</span> R$ 786.950</li>
-            </ul>
-
-            <a href="http://127.0.0.1:5500/Tela3/index3.html" target="_blank">
-                <button>Ver detalhes</button>
-            </a>
-
-        </div>
-
-        <div class="card">
-            <img src="../../img/HB20/Hb20.jpg" alt="Hb20">
-            <h2>HB20</h2>
-
-            <ul>
-                <li><span>Cor:</span> Preto</li>
-                <li><span>Preço:</span> R$ 85.990</li>
-            </ul>
-
-            <a href="http://127.0.0.1:5500/Tela4/index4.html" target="_blank">
-                <button>Ver detalhes</button>
-            </a>
-
-        </div>
-
-         <div class="card">
-            <img src="../../img/Tracker/Tracker_.webp" alt="Tracker">
-            <h2>Tracker LTZ</h2>
-
-            <ul>
-                <li><span>Cor:</span> Branco</li>
-                <li><span>Preço:</span> R$ 89.990</li>
-            </ul>
-
-            <a href="http://127.0.0.1:5500/Tela5/index5.html" target="_blank">
-                <button>Ver detalhes</button>
-            </a>
-
-        </div>
-
-    </main>
-
-    <footer>
-        <p>© 2025 - Site de Carros Premium</p>
-    </footer>
+<script>
+function sair() {
+    localStorage.removeItem("tipoUsuario");
+    window.location.href = "../TelaLogin/login.html";
+}
+</script>
 
 </body>
-
 </html>

@@ -105,3 +105,23 @@ footer {
     color: #aaa;
     margin-top: 40px;
 }
+
+
+.btn-sair {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 8px 22px;
+    border-radius: 25px;
+    border: 2px solid #ff1e1e;
+    background: transparent;
+    color: #ff1e1e;
+    cursor: pointer;
+    z-index: 1000;
+    transition: 0.3s;
+}
+
+.btn-sair:hover {
+    background: #ff1e1e;
+    color: black;
+}

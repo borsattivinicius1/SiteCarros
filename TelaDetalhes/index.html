@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalhes do Veículo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="detalhes-container">
+
+    <h1 id="nome"></h1>
+
+    <!-- SLIDER -->
+    <div class="imagem-slider">
+        <img id="fotoCarro">
+    </div>
+
+    <!-- DESTAQUES -->
+    <section class="destaques">
+        <div class="card"><span id="potencia"></span><p>Potência</p></div>
+        <div class="card"><span id="zero"></span><p>0–100 km/h</p></div>
+        <div class="card"><span id="cambio"></span><p>Câmbio</p></div>
+        <div class="card"><span id="combustivel"></span><p>Combustível</p></div>
+    </section>
+
+    <!-- DESCRIÇÃO -->
+    <section class="descricao">
+        <h2>Sobre o veículo</h2>
+        <p id="descricao"></p>
+    </section>
+
+    <!-- FICHA -->
+    <section>
+        <h2>Ficha Técnica</h2>
+        <table class="ficha-tecnica">
+            <tr><td>Motor</td><td id="motor"></td></tr>
+            <tr><td>Torque</td><td id="torque"></td></tr>
+            <tr><td>Tração</td><td id="tracao"></td></tr>
+            <tr><td>Porta-malas</td><td id="porta"></td></tr>
+        </table>
+    </section>
+
+    <button onclick="window.close()">⬅ Voltar</button>
+
+</div>
+
+<script>
+const i = localStorage.getItem("carroSelecionado");
+const carro = JSON.parse(localStorage.getItem("veiculos"))[i];
+
+nome.innerText = carro.nome;
+fotoCarro.src = carro.imagem;
+descricao.innerText = carro.descricao || "";
+
+potencia.innerText = carro.potencia || "-";
+zero.innerText = carro.zero || "-";
+cambio.innerText = carro.cambio || "-";
+combustivel.innerText = carro.combustivel || "-";
+
+motor.innerText = carro.motor || "-";
+torque.innerText = carro.torque || "-";
+tracao.innerText = carro.tracao || "-";
+porta.innerText = carro.porta || "-";
+</script>
+
+</body>
+</html>
