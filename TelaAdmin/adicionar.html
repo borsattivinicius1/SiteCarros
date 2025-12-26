@@ -2,41 +2,52 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Painel Admin</title>
+    <title>Adicionar Detalhes do Veículo</title>
     <link rel="stylesheet" href="adicionar.css">
-    <script>
-        if (localStorage.getItem("tipoUsuario") !== "admin") {
-            window.location.href = "../TelaLogin/login.html";
-        }
-    </script>
 </head>
 <body>
 
-<button class="btn-sair" onclick="sair()">Sair</button>
+<div class="admin-container">
 
-<div class="admin-wrapper">
-    <div class="admin-card">
-        <h1>Painel do Administrador</h1>
-        <p class="sub">Cadastrar novo veículo</p>
+    <h1>Detalhes do Veículo</h1>
 
-        <input id="nome" placeholder="Nome do veículo">
-        <input id="cor" placeholder="Cor">
-        <input id="preco" placeholder="Preço">
-        <input id="imagem" placeholder="URL da imagem">
-        <textarea id="descricao" placeholder="Descrição"></textarea>
+    <input id="nome" placeholder="Nome do veículo">
 
-        <button onclick="salvar()">Salvar Veículo</button>
+    <div class="linha">
+        <input id="potencia" placeholder="Potência (ex: 150 cv)">
+        <input id="zero" placeholder="0–100 km/h (ex: 8.5s)">
     </div>
+
+    <div class="linha">
+        <input id="cambio" placeholder="Câmbio">
+        <input id="combustivel" placeholder="Combustível">
+    </div>
+
+    <div class="linha">
+        <input id="motor" placeholder="Motor">
+        <input id="torque" placeholder="Torque">
+    </div>
+
+    <div class="linha">
+        <input id="tracao" placeholder="Tração">
+        <input id="porta" placeholder="Porta-malas">
+    </div>
+
+    <textarea id="descricao" placeholder="Descrição do veículo"></textarea>
+
+    <h2>Fotos</h2>
+    <input type="file" id="fotos" accept="image/*" multiple onchange="uploadFotos(event)">
+
+    <div id="preview"></div>
+
+    <h2>Cor temática da tela</h2>
+    <input type="color" id="tema" value="#b4b4b4">
+
+    <button class="salvar" onclick="salvar()">Salvar Veículo</button>
+    <button class="voltar" onclick="history.back()">⬅ Voltar</button>
+
 </div>
 
-<script>
-function sair() {
-    localStorage.removeItem("tipoUsuario");
-    window.location.href = "../TelaLogin/login.html";
-}
-</script>
-
-
-<script src="adicionar.js"></script>
+<script src="adicionar-detalhes.js"></script>
 </body>
 </html>

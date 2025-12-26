@@ -5,64 +5,93 @@
     <title>Detalhes do Veículo</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <div class="detalhes-container">
 
-    <h1 id="nome"></h1>
+    <h1 id="nome">Veículo</h1>
 
-    <!-- SLIDER -->
     <div class="imagem-slider">
+        <button class="nav" onclick="anterior()">❮</button>
         <img id="fotoCarro">
+        <button class="nav" onclick="proximo()">❯</button>
     </div>
 
-    <!-- DESTAQUES -->
     <section class="destaques">
-        <div class="card"><span id="potencia"></span><p>Potência</p></div>
-        <div class="card"><span id="zero"></span><p>0–100 km/h</p></div>
-        <div class="card"><span id="cambio"></span><p>Câmbio</p></div>
-        <div class="card"><span id="combustivel"></span><p>Combustível</p></div>
+        <div class="card"><span id="potencia">-</span><p>Potência</p></div>
+        <div class="card"><span id="zero">-</span><p>0–100 km/h</p></div>
+        <div class="card"><span id="cambio">-</span><p>Câmbio</p></div>
+        <div class="card"><span id="combustivel">-</span><p>Combustível</p></div>
     </section>
 
-    <!-- DESCRIÇÃO -->
     <section class="descricao">
         <h2>Sobre o veículo</h2>
-        <p id="descricao"></p>
+        <p id="descricao">-</p>
     </section>
 
-    <!-- FICHA -->
     <section>
         <h2>Ficha Técnica</h2>
         <table class="ficha-tecnica">
-            <tr><td>Motor</td><td id="motor"></td></tr>
-            <tr><td>Torque</td><td id="torque"></td></tr>
-            <tr><td>Tração</td><td id="tracao"></td></tr>
-            <tr><td>Porta-malas</td><td id="porta"></td></tr>
+            <tr><td>Motor</td><td id="motor">-</td></tr>
+            <tr><td>Torque</td><td id="torque">-</td></tr>
+            <tr><td>Tração</td><td id="tracao">-</td></tr>
+            <tr><td>Porta-malas</td><td id="porta">-</td></tr>
         </table>
     </section>
 
-    <button onclick="window.close()">⬅ Voltar</button>
+    <button class="voltar" onclick="history.back()">⬅ Voltar</button>
 
 </div>
 
 <script>
-const i = localStorage.getItem("carroSelecionado");
-const carro = JSON.parse(localStorage.getItem("veiculos"))[i];
+let idx = 0;
 
-nome.innerText = carro.nome;
-fotoCarro.src = carro.imagem;
-descricao.innerText = carro.descricao || "";
+const i = Number(localStorage.getItem("carroSelecionado"));
+const veiculos = JSON.parse(localStorage.getItem("veiculos")) || [];
+const carro = veiculos[i];
 
-potencia.innerText = carro.potencia || "-";
-zero.innerText = carro.zero || "-";
-cambio.innerText = carro.cambio || "-";
-combustivel.innerText = carro.combustivel || "-";
+if (!carro) {
+    alert("Erro: veículo não encontrado.");
+}
 
-motor.innerText = carro.motor || "-";
-torque.innerText = carro.torque || "-";
-tracao.innerText = carro.tracao || "-";
-porta.innerText = carro.porta || "-";
+function render() {
+    if (!carro) return;
+
+    document.getElementById("nome").innerText = carro.nome || "-";
+    document.getElementById("descricao").innerText = carro.descricao || "-";
+
+    document.getElementById("potencia").innerText = carro.potencia || "-";
+    document.getElementById("zero").innerText = carro.zero || "-";
+    document.getElementById("cambio").innerText = carro.cambio || "-";
+    document.getElementById("combustivel").innerText = carro.combustivel || "-";
+
+    document.getElementById("motor").innerText = carro.motor || "-";
+    document.getElementById("torque").innerText = carro.torque || "-";
+    document.getElementById("tracao").innerText = carro.tracao || "-";
+    document.getElementById("porta").innerText = carro.porta || "-";
+
+    if (Array.isArray(carro.imagens) && carro.imagens.length > 0) {
+        document.getElementById("fotoCarro").src = carro.imagens[idx];
+    } else {
+        document.getElementById("fotoCarro").src = "";
+    }
+
+    document.documentElement.style.setProperty("--tema", carro.tema || "#b4b4b4");
+}
+
+function proximo() {
+    if (!carro || !carro.imagens || carro.imagens.length === 0) return;
+    idx = (idx + 1) % carro.imagens.length;
+    render();
+}
+
+function anterior() {
+    if (!carro || !carro.imagens || carro.imagens.length === 0) return;
+    idx = (idx - 1 + carro.imagens.length) % carro.imagens.length;
+    render();
+}
+
+render();
 </script>
 
 </body>

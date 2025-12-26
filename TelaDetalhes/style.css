@@ -1,3 +1,7 @@
+:root {
+    --tema: rgb(180,180,180);
+}
+
 body {
     background-color: black;
     color: white;
@@ -12,15 +16,19 @@ body {
     margin: 0 auto;
 }
 
+h1, h2 {
+    color: var(--tema);
+}
+
 /* SLIDER */
 .imagem-slider {
     width: 100%;
     max-width: 750px;
     height: 450px;
-    margin: 0 auto;
+    margin: 30px auto;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 .imagem-slider img {
@@ -28,8 +36,21 @@ body {
     height: 100%;
     object-fit: contain;
     border-radius: 12px;
-    border: 3px solid rgb(180, 180, 180);
-    box-shadow: 0 0 20px rgba(180, 180, 180, 0.6);
+    border: 3px solid var(--tema);
+    box-shadow: 0 0 25px var(--tema);
+}
+
+.nav {
+    background: transparent;
+    border: none;
+    color: var(--tema);
+    font-size: 40px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.nav:hover {
+    color: white;
 }
 
 /* DESTAQUES */
@@ -41,15 +62,16 @@ body {
 }
 
 .card {
-    border: 2px solid rgb(180, 180, 180);
+    border: 2px solid var(--tema);
     border-radius: 12px;
     padding: 20px;
+    box-shadow: 0 0 15px rgba(255,255,255,0.1);
 }
 
 .card span {
     font-size: 22px;
     font-weight: bold;
-    color: rgb(220, 220, 220);
+    color: var(--tema);
 }
 
 .card p {
@@ -71,25 +93,21 @@ body {
 }
 
 .ficha-tecnica td {
-    border: 1px solid rgb(180, 180, 180);
+    border: 1px solid var(--tema);
     padding: 10px;
 }
 
-/* GERAL */
-h1, h2 {
-    color: rgb(230, 230, 230);
-}
-
-button {
+/* BOTÃO */
+.voltar {
     padding: 12px 28px;
     background: transparent;
-    color: rgb(230, 230, 230);
-    border: 2px solid rgb(230, 230, 230);
+    color: var(--tema);
+    border: 2px solid var(--tema);
     border-radius: 30px;
     cursor: pointer;
 }
 
-button:hover {
-    background: rgb(100, 100, 100);
-    color: white;
+.voltar:hover {
+    background: var(--tema);
+    color: black;
 }
